@@ -31,9 +31,14 @@ let removeSecondCanvas = setTimeout(function () {
 }, 9800);
 
 async function enviar() {
-    const ipromise = await fetch('https://ipinfo.io/json');
-    const arrip = await ipromise.json();
-    const ipAddress = arrip.ip;
+    var ipAddress = "0.0.0.0";
+    try {
+        const ipromise = await fetch("https://ipinfo.io/json");
+        const arrip = await ipromise.json();
+        ipAddress = arrip.ip;
+    } catch (error) {
+        console.error(error);
+    }
     const felicitaciones = $("#felicitaciones").val();
     const nombre = $("#nombre").val();
     const proxyUrl = "https://dawadokuna.pythonanywhere.com/";
