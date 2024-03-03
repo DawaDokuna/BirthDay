@@ -31,13 +31,12 @@ let removeSecondCanvas = setTimeout(function () {
 }, 9800);
 
 async function enviar() {
-    const ipromise = await fetch("https://api64.ipify.org?format=json");
+    const ipromise = await fetch("https://api64.ipify.org?format=json",{mode: 'cors'});
     const arrip = await ipromise.json();
     const ipAddress = arrip.ip;
     const felicitaciones = $("#felicitaciones").val();
     const nombre = $("#nombre").val();
     const proxyUrl = "https://dawadokuna.pythonanywhere.com/";
-    console.log(ipAddress + " " + felicitaciones + " " + nombre);
     if (nombre == "" || felicitaciones == "") {
         alert("Por favor llena todos los campos");
     } else {
