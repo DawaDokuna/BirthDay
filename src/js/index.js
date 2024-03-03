@@ -38,10 +38,10 @@ async function enviar() {
     const nombre = $("#nombre").val();
     const proxyUrl = "https://dawadokuna.pythonanywhere.com/";
     console.log(ipAddress + " " + felicitaciones + " " + nombre);
-    if (nombre === "" || felicitaciones === "") {
+    if (nombre == "" || felicitaciones == "") {
         alert("Por favor llena todos los campos");
     } else {
-        const respuesta = await fetch(proxyUrl, {
+        await fetch(proxyUrl, {
             method: "POST",
             body: JSON.stringify({
                 funcion: "add",
