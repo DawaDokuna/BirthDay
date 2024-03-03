@@ -31,7 +31,7 @@ let removeSecondCanvas = setTimeout(function () {
 }, 9800);
 
 async function enviar() {
-    const ipromise = await fetch("https://api64.ipify.org?format=json",{mode: 'cors'});
+    const ipromise = await fetch('https://ipinfo.io/json');
     const arrip = await ipromise.json();
     const ipAddress = arrip.ip;
     const felicitaciones = $("#felicitaciones").val();
