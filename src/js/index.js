@@ -44,7 +44,7 @@ async function enviar() {
         const respuesta = await fetch(proxyUrl, {
             method: "POST",
             body: JSON.stringify({
-                funcion: "get",
+                funcion: "add",
                 nombre: nombre,
                 ip: ipAddress,
                 felicitaciones: felicitaciones,
